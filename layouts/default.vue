@@ -1,54 +1,50 @@
 <template>
-  <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
-
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
-
-    <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
+   <div>
+    <b-navbar style="height:100px">
+        <template slot="brand">
+            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                <img
+                    src="@/assets/img/buefy.png"
+                >
+            </b-navbar-item>
+        </template>
+        <template slot="start">
             <nuxt-link
-              :to="item.to"
-              exact-active-class="is-active"
+            to="/index"
+            exact-active-class="is-active"
+            tag="b-navbar-item"
             >
-              <b-icon :icon="item.icon" /> {{ item.title }}
+              HOME
             </nuxt-link>
-          </li>
-        </ul>
-      </aside>
-
-      <div class="container column is-10">
-        <nuxt />
-      </div>
-    </section>
+            <nuxt-link
+            :to="`/map`"
+            exact-active-class="is-active"
+            tag="b-navbar-item"
+            >
+              MAP
+            </nuxt-link>
+            <nuxt-link
+            :to="`/post`"
+            exact-active-class="is-active"
+            tag="b-navbar-item"
+            >
+              POST
+            </nuxt-link>
+            <nuxt-link
+            :to="`/video`"
+            exact-active-class="is-active"
+            tag="b-navbar-item"
+            >
+              VIDEO
+            </nuxt-link>
+        </template>
+        <template slot="end">
+            <b-navbar-item @click="logout()">
+                ログアウト
+            </b-navbar-item>
+        </template>
+    </b-navbar>
+    <nuxt />
   </div>
 </template>
 
