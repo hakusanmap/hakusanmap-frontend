@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -42,5 +45,12 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+
+  env: {
+    apiKey: process.env.API_KEY
+  },
+  plugins: [
+     { src:  '~/plugins/google-map', ssr: false }
+  ]
 }
