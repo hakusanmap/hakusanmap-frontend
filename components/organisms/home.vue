@@ -1,12 +1,13 @@
 <template>
-    <div id="map">
+    <div class="home">
+
     </div>
+
 </template>
 
 <script>
-
 export default {
-    layout:'default',
+
 }
 </script>
 
