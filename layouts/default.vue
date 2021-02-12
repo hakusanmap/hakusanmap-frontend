@@ -10,7 +10,7 @@
             </template>
             <template slot="start" style="float:left">
                 <nuxt-link
-                to="/index"
+                to="/"
                 exact-active-class="is-active"
                 tag="b-navbar-item"
                 >
