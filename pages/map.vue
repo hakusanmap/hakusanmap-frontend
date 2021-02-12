@@ -1,5 +1,5 @@
 <template>
-    <map />
+    <Map></Map>
 </template>
 
 <script>
